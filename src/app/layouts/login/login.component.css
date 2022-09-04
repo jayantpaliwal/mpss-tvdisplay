@@ -1,0 +1,174 @@
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .logo-wrapper {
+    margin-top: 40px;
+    animation-name: fadein;
+    animation-duration: 4s;
+  }
+  .logo-wrapper .logo {
+    margin: 0 auto;
+  }
+  .logo-wrapper .logo img {
+    width: 150px;
+  }
+  .form-wrapper {
+    padding: 40px 10px;
+  }
+  
+  .form-wrapper form {
+    background: white;
+    padding: 40px 40px !important;
+    border: 0px solid #ccc;
+    color: grey;
+    box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    animation-name: fadein;
+    animation-duration: 2s;
+  }
+  
+  .form-wrapper legend {
+    border: 0;
+    font-weight: 600;
+    color: black;
+    font-size: 36px;
+    margin-left: 10%;
+  }
+  
+  .form-wrapper fieldset label.input {
+    font-weight: 500;
+    color: #000;
+    font-size: 16px;
+    margin: 0;
+    letter-spacing: 0.02em;
+  }
+  .form-wrapper fieldset input {
+    border-radius: 10;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 15px;
+    height: 50px;
+    font-weight: 400;
+    color: grey;
+    font-size: 14px;
+  }
+  .form-wrapper button {
+    float: right;
+    border-radius: 10;
+    border: 0px solid #ccc;
+    font-size: 15px;
+    padding: 15px 25px 15px 25px;
+    /* // background-color: #000 !important; */
+  }
+  
+  .form-wrapper button:hover {
+    background-color: #ef7745;
+  }
+  
+  .form-group {
+    margin-bottom: 0px !important;
+    padding-bottom: 10px !important;
+  }
+  
+  .changeNumber {
+    cursor: pointer;
+    color: blue;
+    font-size: 14px;
+  }
+  .changeNumber:hover {
+    text-decoration: underline;
+  }
+  .resendOtp {
+    cursor: pointer;
+    color: blue !important;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  a:hover {
+    text-decoration: underline !important;
+  }
+  
+  .loader-background {
+    width: 98%;
+    height: 84%;
+    margin: 0 auto;
+    background-color: rgb(214, 207, 207);
+    opacity: 0.2;
+    position: absolute;
+    top: 8%;
+    left: 1%;
+  }
+  
+  .loader-demo {
+    height: 150px;
+    padding-top: 50px;
+    text-align: center;
+    margin-top: 19%;
+    margin-left: 7%;
+  }
+  .plus {
+    height: 50px;
+    margin-top: 5px;
+  }
+  .link {
+    position: relative;
+    top: -19px;
+    color: blue !important;
+    cursor: pointer;
+  }
+  .down_text {
+    font-weight: 400;
+    color: grey;
+    font-size: 14px;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  .roboLink {
+    color: blue !important;
+    cursor: pointer;
+  }
+  
+  .resent-success-bar {
+    background-color: green;
+    border: 1px solid;
+    border-radius: 4px;
+    color: white;
+    padding: 3px;
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .image {
+    margin-left: 6.5rem;
+  }
+  
+  .errorMsg {
+    font-size: 18px;
+    background-color: #e8f0fe;
+    border-radius: 4px;
+    border: 1px solid #b5b6b7;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  
+  button:disabled {
+    cursor: pointer;
+  }
+  
+  @media (min-width: 320px) and (max-width: 812px) {
+    .form-wrapper form {
+      padding: 25px 20px !important;
+    }
+  }
+  
+  @media (min-width: 812px) and (max-width: 1400px) {
+    .form-wrapper form {
+      padding: 40px 40px !important;
+    }
+  }

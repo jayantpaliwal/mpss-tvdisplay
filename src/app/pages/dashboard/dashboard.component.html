@@ -1,0 +1,571 @@
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row" data-toggle="modal" data-target="#touristsTillModel">
+          <div class="col-3 col-md-3">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-globe" style="color:green"></i>
+            </div>
+          </div>
+          <div class="col-9 col-md-9">
+            <div class="numbers">
+              <p class="card-category">Tourists Till Now</p>
+               <p class="card-title">{{tourist_till_now[0]?.TotalTourists ? tourist_till_now[0]?.TotalTourists : 0}}
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder">
+        <hr>
+        <div class="stats">
+          <i class="fa fa-calendar-o"></i> Today
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <!-- <div class="row" data-toggle="modal" data-target="#touristsInsideModel"> -->
+        <div class="row">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="nc-icon nc-vector text-danger"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Tourists Inside</p>
+              <p class="card-title">{{ tourist_inside[0]?.TouristsInside }}<p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder">
+        <hr>
+          <div class="stats">
+            <i class="fa fa-calendar-o"></i> Today
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row" data-toggle="modal" data-target="#vechileModel">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-car" aria-hidden="true" style="color:burlywood"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Vehicles</p>
+              <p class="card-title">
+                <!-- {{ parking_status[0][0]?.TotalVechile }} -->
+                {{ parking_status.TotalVechile }}
+                <p> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder">
+        <hr>
+        <div class="text-success" style="cursor: pointer;" >
+           Available : {{ parking_status.Scooter + parking_status.Auto + parking_status.Car + parking_status.Bus - parking_status.TotalVechile }} / <span class="text-danger"> {{ parking_status.Scooter + parking_status.Auto + parking_status.Car + parking_status.Bus }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row" data-toggle="modal" data-target="#touristsTillModel">
+          <div class="col-3 col-md-3">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-motorcycle" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="col-9 col-md-9">
+            <div class="numbers">
+              <p class="card-category">Two Wheelers</p>
+               <p class="card-title">
+                <!-- {{ parking_status[0][0]?.TwoWheelers }} -->
+                {{ parking_status.TwoWheelers }}
+                <!-- <hr>
+                  <p class="card-category">Total Slots : </p>  -->
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder">
+        <hr>
+        <div  class="text-success" style="cursor: pointer;">
+          Available : {{ parking_status.Scooter -  parking_status.TwoWheelers }} / <span class="text-danger"> {{ parking_status.Scooter }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <!-- <div class="row" data-toggle="modal" data-target="#touristsInsideModel"> -->
+        <div class="row" data-toggle="modal">
+          <div class="col-3 col-md-3">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-truck" aria-hidden="true" style="color:#d3a20f"></i>
+            </div>
+          </div>
+          <div class="col-9 col-md-9">
+            <div class="numbers">
+              <p class="card-category">Three Wheelers</p>
+              <p class="card-title">
+                <!-- {{ parking_status[0][0]?.ThreeWheelers }} -->
+                {{ parking_status.ThreeWheelers }}
+              <!-- </p><hr>
+                  <p class="card-category">Total Slots : </p>  -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder">
+        <hr>
+    
+        <div class="stats text-success" style="cursor: pointer;">
+          Available : {{ parking_status.Auto - parking_status.ThreeWheelers }} / <span class="text-danger"> {{ parking_status.Auto }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row" data-toggle="modal" data-target="#ticketModel">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-car" aria-hidden="true" style="color: rgb(63, 32, 144)"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Four Wheelers</p>
+              <p class="card-title">
+                <!-- {{ parking_status[0][0]?.FourWheelers  }} -->
+                {{ parking_status.FourWheelers }}
+                <!-- <hr>
+                  <p class="card-category">Total Slots : </p>  -->
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder">
+        <hr>
+        <div class="stats text-success" style="cursor: pointer;">
+          Available : {{ parking_status.Car - parking_status.FourWheelers  }} / <span class="text-danger"> {{ parking_status.Car }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row" data-toggle="modal" data-target="#vechileModel">
+          <div class="col-5 col-md-4">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-bus" aria-hidden="true" style="color:red"></i>
+            </div>
+          </div>
+          <div class="col-7 col-md-8">
+            <div class="numbers">
+              <p class="card-category">Six Wheelers</p>
+              <p class="card-title">
+                <!-- {{ parking_status[0][0]?.SixWheelers }} -->
+                {{ parking_status.SixWheelers }}
+                <!-- <hr>
+                  <p class="card-category">Total Slots : </p>  -->
+                <p> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder">
+        <hr>
+        <div class="stats text-success" style="cursor: pointer;">
+          Available : {{ parking_status.Bus  - parking_status.SixWheelers }} / <span class="text-danger"> {{ parking_status.Bus }} </span> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-6">
+    <div class="card card-stats">
+      <div class="card-body ">
+        <div class="row" data-toggle="modal" data-target="#touristsTillModel">
+          <div class="col-3 col-md-3">
+            <div class="icon-big text-center icon-warning">
+              <i class="fa fa-film" style="color:rgb(233, 36, 10)" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="col-9 col-md-9">
+            <div class="numbers">
+              <p class="card-category">Light And Sound Show</p>
+               <p class="card-title">
+                <!-- {{ parking_status.length?parking_status[1][0].LightSoundBookedSeats:0 }} -->
+                {{ parking_status.LightSoundBookedSeats }}
+                <!-- <hr> -->
+                <!-- <p class="card-category">Total Seats : </p>  -->
+                <p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer font-weight-bolder" >
+        <hr>
+        <div  class="stats text-success" style="cursor: pointer;">
+         Available : {{ parking_status.LightAndSound - parking_status.LightSoundBookedSeats }} /  <span class="text-danger"> {{ parking_status.LightAndSound }} </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">  
+  <div class="col-lg-8 col-md-6 col-sm-6">
+    <div class="card ">
+      <div class="card-header ">
+        <div class="row">
+          <div class="col-md-6">
+          <h5 class="card-title">Collection</h5>
+          <p class="card-category">Today Collection</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="card-title text-right">  <span>&#8377;</span> {{today_collection_total}}</h5>
+            </div>
+        </div>
+      </div>
+      <div class="card-body ">
+        <div class="row">
+          <div class="col-md-8">
+            <canvas id="dailyCollection"></canvas>
+          </div>
+          <div class="col-md-4">
+            <table class="table">
+              <tbody *ngFor="let amt of today_collection">
+                <th *ngIf="amt.amount > 0">{{amt.paymentOption}}</th>
+                <td *ngIf="amt.amount > 0"><span>&#8377;</span> {{amt.amount}}</td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="legend">
+          <i class="fa fa-circle text-primary"></i> Cash
+          <i class="fa fa-circle text-warning"></i> UPI Payments
+          <i class="fa fa-circle text-gray"></i> Card
+          <i class="fa fa-circle text-danger"></i> Online
+        </div>
+        <hr />
+        <div class="stats">
+          <i class="fa fa-calendar"></i> Today's Total Collection
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-2 col-md-3 col-sm-3">
+  </div>
+  <div class="col-lg-2 col-md-3 col-sm-3"></div>
+</div> -->
+<!-- tourist todays modal -->
+<!-- <div class="modal fade" id="touristsTillModel" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalCenterTitle1" data-focus-on="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="ml-2 mt-2">Tourists Visited Till Now</h4>
+                
+                <button type="button" class="close" (click)="closeModal('touristsTillModel')" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th class="text-center">
+                      TYPE 
+                    </th>
+                    <th  class="text-center">
+                      TOTAL
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr class="text-center">
+                      <td>
+                        Adult
+                      </td>
+                      <td>
+                        {{tourist_till_now[0]?.TotalAdult}}
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Children
+                      </td>
+                      <td>
+                        {{tourist_till_now[0]?.TotalChildren}}
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Senior Citizen
+                      </td>
+                      <td>
+                        {{tourist_till_now[0]?.TotalSrCitizen}}
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Total
+                      </td>
+                      <td>
+                        {{tourist_till_now[0]?.TotalTourists}}
+                      </td>
+                    </tr>
+                    </tbody>
+                    </table>
+        </div>
+    </div>
+</div>
+</div> -->
+<!-- tourists inside modal -->
+<!-- <div class="modal fade" id="touristsInsideModel" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalCenterTitle1" data-focus-on="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="ml-2 mt-2">Tourists Inside Now</h4> -->
+                <!-- <h4>15</h4> --><!--
+                <button type="button" class="close" (click)="closeModal('touristsInsideModel')" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th class="text-center">
+                      TYPE 
+                    </th>
+                    <th  class="text-center">
+                      TOTAL
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr class="text-center">
+                      <td>
+                        Adult
+                      </td>
+                      <td>
+                        0
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Children
+                      </td>
+                      <td>
+                        0
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Total
+                      </td>
+                      <td>
+                        0
+                      </td>
+                    </tr>
+                    </tbody>
+                    </table>
+        </div>
+    </div>
+</div>
+</div> -->
+<!-- Ticket modal -->
+<!-- <div class="modal fade" id="ticketModel" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalCenterTitle1" data-focus-on="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="ml-2 mt-2">Tickets Generated Till Now</h4>
+            
+                <button type="button" class="close" (click)="closeModal('touristsInsideModel')" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th class="text-center">
+                      Tickect Type 
+                    </th>
+                    <th  class="text-center">
+                      Total
+                    </th>
+                  </thead>
+                  <tbody *ngFor="let tickets of today_sold_tickets">
+                    <tr class="text-center">
+                      <td>
+                        {{tickets?.TicketType}}
+                      </td>
+                      <td>
+                        {{tickets?.SoldQuantity}}
+                      </td>
+                    </tr>
+                    </tbody>
+                </table>
+              </div>
+      </div>
+  </div>
+</div> -->
+<!-- Vechile modal -->
+<!-- <div class="modal fade" id="vechileModel" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false"
+    aria-labelledby="exampleModalCenterTitle1" data-focus-on="modal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="ml-2 mt-2">Vehicle In Parking</h4>
+      
+                <button type="button" class="close" (click)="closeModal('touristsInsideModel')" data-dismiss="modal" aria-label="Close">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th class="text-center">
+                      Vehicle Type
+                    </th>
+                    <th  class="text-center">
+                      Total
+                    </th>
+                  </thead>
+                  <tbody>
+                    <tr class="text-center">
+                      <td>
+                        Scooter
+                      </td>
+                      <td>
+                        {{parking_status[0]?.TwoWheelers}}
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Auto
+                      </td>
+                      <td>
+                        {{parking_status[0]?.ThreeWheelers}}
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Car
+                      </td>
+                      <td>
+                        {{parking_status[0]?.FourWheelers}}
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Bus
+                      </td>
+                      <td>
+                        {{parking_status[0]?.SixWheelers}}
+                      </td>
+                    </tr>
+                    <tr class="text-center">
+                      <td>
+                        Total
+                      </td>
+                      <td>
+                        {{parking_status[0]?.TwoWheelers+parking_status[0]?.ThreeWheelers+parking_status[0]?.FourWheelers+parking_status[0]?.SixWheelers}}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+    </div>
+</div>
+</div> -->
+<!-- Modal to create new appointment -->
+<!-- <div id="newAppt" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-danger">
+                Create A New Appointment
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+              <table class="text-center appointment_table" [formGroup]="appt_form">
+                <tr>
+                  <th>Name : </th>
+                  <td><input id="name" type="text" [formControl]="appt_form.controls['name']"/></td>
+                  <td>&nbsp;<span class="required"></span></td>
+                </tr>
+                <tr>
+                  <th>Mobile 1: </th>
+                  <td><input id="mobile1" type="tel" onKeyPress="if(this.value.length==10) mobileLength();" pattern="[0-9]{10}" [formControl]="appt_form.controls['mobile1']"/></td>
+                  <td>&nbsp;<span class="required"></span></td>
+                </tr>
+                <tr>
+                  <th>Mobile 2: </th>
+                  <td><input id="mobile2" type="tel" onKeyPress="if(this.value.length==10) mobileLength();" pattern="[0-9]{10}" [formControl]="appt_form.controls['mobile2']"/></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Ticket Type : </th>
+                  <td>
+                    <select class="form-control" [formControl]="appt_form.controls['ticket_type']">
+                      <option disabled>--Select--</option>
+                      <option *ngFor="let d_list of tickettypelist" value="{{d_list.id}}">{{d_list.type}}</option>
+                    </select>
+                </td>
+                <td>&nbsp;<span class="required"></span></td>
+                </tr>
+                <tr>
+                  <th>Reference : </th>
+                  <td>
+                    <select class="form-control" [formControl]="appt_form.controls['reference']">
+                      <option disabled>--Select--</option>
+                      <option *ngFor="let d_list of referencelist" value="{{d_list.id}}">{{d_list.name}}</option>
+                      </select>
+                  </td>
+                <td>&nbsp;<span class="required"></span></td>
+                </tr>
+              </table>
+            </div>
+            <div class="d-flex flex-row-reverse" style="padding: 15px 20px;">
+              <input class="btn btn-custom" type="submit" (click)="createAppt()" data-dismiss="modal" value="CREATE" [disabled]="!appt_form.valid"/>
+              <div class="btn" data-dismiss="modal" style="margin-right:10px !important;">CANCEL</div>
+            </div>
+        </div>
+    </div>
+</div> -->

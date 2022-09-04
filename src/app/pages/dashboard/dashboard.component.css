@@ -1,0 +1,24 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+ /* Firefox  */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.required:after {
+    content:" *";
+    color: red;
+    }
+.appointment_table{width:100%;}  
+.appointment_table th, .appointment_table td  {padding-bottom: 8px;}
+.appointment_table input{width: 100% !important;}    
+
+.text-success{
+  color: #197a45!important;
+}
+.text-danger{
+  color: #b9107d !important;
+}

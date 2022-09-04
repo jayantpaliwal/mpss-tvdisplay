@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.rupee {
+    background-position:left;
+    width: 10px;
+    height: 14px;
+    background-image: url('http://i.stack.imgur.com/vJZ9m.png');
+    display:block;
+    background-repeat: no-repeat;
+}
+.modal-backdrop {
+    z-index: 120 !important;
+}

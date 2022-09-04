@@ -1,0 +1,26 @@
+<!-- 
+<div class="sidebar-wrapper">
+  <div class="logo">
+    <a href="https://crococode.com/" class="simple-text logo-mini">
+      <div class="logo-image-small">
+        <img src="assets/img/MPSS_logo.jpg">
+      </div>
+    </a>
+    <a href="https://crococode.com/" class="simple-text logo-normal">
+Crococode team
+    </a>
+  </div>
+    <ul class="nav">
+        <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
+            <a [routerLink]="[menuItem.path]" (click)="menuItem.title === 'Logout' ? logout() : '' || menuItem.submenu ? isEpanded=!isEpanded : ''">
+                <i class="nc-icon {{menuItem.icon}}"></i>
+                <p>{{menuItem.title}}</p>
+                <i  *ngIf="menuItem.submenu" class="nc-icon {{isEpanded ? 'nc-stre-right':'nc-stre-right'}}"></i>
+            </a>
+            <a *ngIf="menuItem.submenu && isEpanded">
+              <i class="nc-icon {{menuItem.icon}}"></i>
+              <p>Sub title</p>
+          </a>
+        </li>
+    </ul>
+</div> -->

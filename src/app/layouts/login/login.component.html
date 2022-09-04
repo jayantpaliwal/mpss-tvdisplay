@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="logo-wrapper">
+        <div class="logo text-center">
+            <img alt="logo_image" src="assets/img/MPSS_logo.jpg" />
+        </div>
+    </div>
+    <div class="row row justify-content-center align-items-center">
+        <div class="form-wrapper loginform col-md-6 col-md-offset-3">
+            <form [formGroup]="loginForm" class="form-group">
+                <fieldset>
+                    <label for="username" class="input m-0">Username</label>
+                    <input name="username" class="form-control email" type="text"
+                        [formControl]="loginForm.controls['username']" />
+                    <br />
+                    <label for="password" class="input m-0">Password</label>
+                    <input name="password" class="form-control password" type="password"
+                        [formControl]="loginForm.controls['password']" />
+                    <div class="alert alert-danger" *ngIf="loginFailText">
+                        <i>That didn't work. Please try again.</i>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="isLogInRestricted">
+                        <i>LogIn Access Currently Restricted.</i>
+                    </div>
+                    <br />
+                    <button class="btn btn-custom"
+                        [disabled]="!(loginForm.controls['username'].valid && loginForm.controls['password'].valid)"
+                        (click)="onLogin()">
+                        Login
+                    </button>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
